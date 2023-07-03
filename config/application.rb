@@ -13,7 +13,7 @@ module CredentialsDemo
       .with_indifferent_access
       .transform_keys(&:upcase)
       .transform_values(&:to_s)
-    ap creds
+
     ENV.merge! creds.merge(ENV)
 
     # Initialize configuration defaults for originally generated Rails version.
