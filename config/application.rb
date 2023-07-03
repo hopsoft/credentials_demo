@@ -8,8 +8,7 @@ Bundler.require(*Rails.groups)
 
 module CredentialsDemo
   class Application < Rails::Application
-    creds = credentials[:shared]
-      .merge(credentials[Rails.env.to_sym])
+    creds = credentials[Rails.env.to_sym]
       .with_indifferent_access
       .transform_keys(&:upcase)
       .transform_values(&:to_s)

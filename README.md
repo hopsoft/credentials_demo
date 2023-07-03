@@ -26,20 +26,23 @@ Here's the [TL;DR](https://github.com/hopsoft/credentials_demo/blob/main/config/
     ```
 
     ```yaml
-    shared:
+    default: &default
       aws_access_key_id: AKIAIOSFODNN7EXAMPLE
       aws_region: us-east-1
       aws_secret_access_key: b1e4c2d8f9a7g5i3h2j4k1l6m8n0o9p5q7r3s1t2u6v8w0x9y4z2
 
     development:
+      <<: *default
       database: db/databases/development.sqlite3
       secret_key_base: 31461f5d38cc7f2e919ea18e9a390bd3558a31be2e5d8e79b9c40ae7a91a5990768da5c8baa2521462c366f5568c4d58b843f92ea5eda71d9bc9c8a8b0c96435
 
     test:
+      <<: *default
       database: db/databases/test.sqlite3
       secret_key_base: 852d4a5f4796699b4204c776c6b7f2934fd2f5424ac9d2f8f15d6bf9a0efc1f4bc5fd6b44fd1b0774de7168a0990d76ae6c3229370414db7b7d66830b2f74491
 
     production:
+      <<: *default
       aws_access_key_id: AKIA5VXCTQ99GEXAMPLE
       aws_secret_access_key: 3a9d8a2b5c4e1f7g6h2i5j1k3l4m7n8o9p0q1r2s3t4u5v6w7x8y9z0
       database: db/databases/production.sqlite3
@@ -49,8 +52,7 @@ Here's the [TL;DR](https://github.com/hopsoft/credentials_demo/blob/main/config/
 2. The application merges the encrypted credentials into the environment `ENV` on boot
 
     ```ruby
-    creds = credentials[:shared]
-      .merge(credentials[Rails.env.to_sym])
+    creds = credentials[Rails.env.to_sym]
       .with_indifferent_access
       .transform_keys(&:upcase)
       .transform_values(&:to_s)
