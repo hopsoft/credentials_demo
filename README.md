@@ -89,6 +89,18 @@ Here's the [TL;DR](https://github.com/hopsoft/credentials_demo/blob/main/config/
     ENV.fetch "DATABASE" # => db/databases/production.sqlite3
     ```
 
+    ---
+
+    Example of environment variable override.
+
+    ```sh
+    DATABASE=db/databases/foo.sqlite3 bin/rails console --environment production
+    ```
+
+    ```ruby
+    ENV.fetch "DATABASE" # => db/databases/foo.sqlite3
+    ```
+
 ## Next Steps
 
 Consider combining this technique with environment specific credentials if you'd like  to hide specific environment configurations from developers.
