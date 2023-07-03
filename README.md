@@ -1,5 +1,7 @@
 # Credentials Demo
 
+## What
+
 This demo app illustrates how to use an environment aware Rails encrypted credentials file to manage app secrets...
 while allowing environment variables to override values stored in the credentials file.
 
@@ -14,6 +16,8 @@ while allowing environment variables to override values stored in the credential
 1. Retains flexibility by allowing the environment (`ENV`) to override
 
 ## How
+
+Here's the [TL;DR](https://github.com/hopsoft/credentials_demo/blob/main/config/application.rb#L11-L17) for the impatient folks.
 
 1. Edit Rails the Rails encrypted credentials file.
 
