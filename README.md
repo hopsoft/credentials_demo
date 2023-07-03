@@ -2,8 +2,7 @@
 
 ## What
 
-This demo app illustrates how to use an environment aware Rails encrypted credentials file to manage app secrets...
-while allowing environment variables to override values stored in the credentials file.
+Demo of environment aware Rails encrypted credentials with environment variable override.
 
 ## Why
 
