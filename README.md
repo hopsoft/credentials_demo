@@ -17,7 +17,7 @@ while allowing environment variables to override values stored in the credential
 
 ## How
 
-Here's the [TL;DR](https://github.com/hopsoft/credentials_demo/blob/main/config/application.rb#L11-L17) for the impatient folks.
+Here's the [TL;DR](https://github.com/hopsoft/credentials_demo/blob/main/config/application.rb#L11-L16) for the impatient folks.
 
 1. Edit Rails the Rails encrypted credentials file.
 
