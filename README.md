@@ -18,7 +18,7 @@ Demo of environment aware Rails encrypted credentials with environment variable 
 
 Here's the [TL;DR](https://github.com/hopsoft/credentials_demo/blob/main/config/application.rb#L11-L16) for the impatient folks.
 
-1. Edit Rails the Rails encrypted credentials file.
+1. Edit the Rails encrypted credentials file.
 
     ```sh
     bin/rails credentials:edit
