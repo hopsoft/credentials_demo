@@ -16,8 +16,6 @@ Demo of environment aware Rails encrypted credentials with environment variable 
 
 ## How
 
-Here's the [TL;DR](https://github.com/hopsoft/credentials_demo/blob/main/config/application.rb#L11-L16) for the impatient folks.
-
 1. Edit the Rails encrypted credentials file.
 
     ```sh
@@ -49,6 +47,8 @@ Here's the [TL;DR](https://github.com/hopsoft/credentials_demo/blob/main/config/
     ```
 
 2. The application merges the encrypted credentials into the environment `ENV` on boot
+
+    [View the code here.](https://github.com/hopsoft/credentials_demo/blob/main/config/application.rb#L11-L16).
 
     ```ruby
     creds = credentials[Rails.env.to_sym]
